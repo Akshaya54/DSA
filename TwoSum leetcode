@@ -1,0 +1,64 @@
+Method 1. Brute Force Approach (O(N²) Time, O(1) Space)
+
+# Brute Force: Try every pair and check if their sum equals target
+
+def twosum(nums, target):
+    n = len(nums)
+    for i in range(0, n):  # Loop through each element
+        for j in range(i + 1, n):  # Check every other element after i
+            if nums[i] + nums[j] == target:
+                return [i, j]  # Return the indices of the two elements
+    return []
+
+# Input
+nums = list(map(int, input("Enter the numbers: ").split()))
+target = int(input("Enter the target: "))
+print("Brute Force Result:", twosum(nums, target))
+
+Method 2. Better Approach – Using Hash Map (O(N) Time, O(N) Space)
+
+# Better: Use a dictionary to store elements and their indices
+# So we can find the required pair in one pass
+
+def twosum(nums, target):
+    d = {}  # Dictionary to store number:index
+    for i in range(len(nums)):
+        b = target - nums[i]  # Check if the complement exists
+        if b in d:
+            return [d[b], i]  # Found the pair, return indices
+        d[nums[i]] = i  # Otherwise, store the index of current element
+    return []
+
+# Input
+nums = list(map(int, input("Enter the numbers: ").split()))
+target = int(input("Enter the target: "))
+print("Hash Map Result:", twosum(nums, target))
+
+
+Method 3. Optimized Approach – Two Pointers (O(N) Time, O(1) Space)
+
+# Only works when the array is sorted
+# Optimized: Use Two Pointers for sorted array
+# Move pointers based on whether the sum is less or more than target
+
+def twosum(nums, target):
+    nums.sort()  # Ensure the array is sorted
+    low = 0
+    high = len(nums) - 1
+
+    while low < high:
+        current_sum = nums[low] + nums[high]
+
+        if current_sum == target:
+            return "YES"  # Found the pair
+        elif current_sum > target:
+            high -= 1  # Move high pointer left
+        else:
+            low += 1  # Move low pointer right
+
+    return "NO"  # No such pair found
+
+# Input
+nums = list(map(int, input("Enter the numbers: ").split()))
+target = int(input("Enter the target: "))
+print("Two Pointers Result:", twosum(nums, target))
