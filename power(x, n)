@@ -1,0 +1,16 @@
+#power(x, n)
+
+Time Complexity= O(log n)
+Space Complexity = O(log n)
+This is a recursive function that efficiently calculates powers in O(log n) time.
+def power(x, n):
+    if n == 0:
+        return 1  # Base case: anything to the power of 0 is 1
+    if n % 2 == 1:
+        return x * power(x, n - 1)  # If exponent is odd
+    return power(x * x, n // 2)    # If exponent is even
+def mypow(x, n):
+    if n < 0:
+        x = 1 / x      # Convert to positive power using reciprocal
+    n = abs(n)         # Work with positive exponent
+    return power(x, n) # Call the efficient recursive power function
