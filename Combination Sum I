@@ -1,0 +1,40 @@
+# Combination Sum I
+You're given a list of candidates (positive integers) and a target sum.
+Find all unique combinations where the same number can be chosen multiple times, and the sum of the combination equals the target.
+
+Constraints:
+1.You can reuse the same element multiple times.
+
+2.The same combination in different orders is considered duplicate → so don’t change order, just generate from left to right.
+
+#Code with Full Explanation and Comments:
+
+# Recursive function to generate combinations
+def gen(ind, cur, ans, cand, tar):
+    # If target is exactly 0, we found a valid combination
+    if tar == 0:
+        ans.append(cur.copy())  # Add a deep copy of the current path
+        return
+
+    # If we reach the end of the list or target becomes negative, stop
+    if ind == len(cand) or tar < 0:
+        return
+
+    # ----------- Include current element -------------
+    cur.append(cand[ind])  # Choose the current number
+    # Stay at the same index (because we can reuse the number)
+    gen(ind, cur, ans, cand, tar - cand[ind])
+    cur.pop()  # Backtrack to explore next possibilities
+
+    # ----------- Exclude current element -------------
+    # Move to the next index without including current element
+    gen(ind + 1, cur, ans, cand, tar)
+
+# Wrapper function
+def comb(cand, tar):
+    ind = 0        # Start from index 0
+    cur = []       # Current combination path
+    ans = []       # Final answer list
+    gen(ind, cur, ans, cand, tar)
+    return ans
+
