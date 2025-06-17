@@ -1,0 +1,40 @@
+## Combination Sum II
+Given a list of candidate numbers (with possible duplicates) and a target sum, find all unique combinations where:
+
+1.Each number can be used only once.
+2.The same combination in different order is considered duplicate (e.g., [1,2,2] and [2,1,2] → same).
+
+# Recursive function to generate unique combinations
+def gen(ind, cur, ans, cand, tar):
+    # Base Case: If target becomes 0, we found a valid combination
+    if tar == 0:
+        ans.append(cur.copy())
+        return
+    
+    # Loop from the current index to end
+    for i in range(ind, len(cand)):
+        # Skip duplicates: if i > ind and same as previous, skip
+        if i > ind and cand[i] == cand[i - 1]:
+            continue
+        
+        # If current candidate is greater than target, break (no need to go further)
+        if cand[i] > tar:
+            break
+
+        # Include the current element
+        cur.append(cand[i])
+        
+        # Recurse for next index (i+1) because we can use each number only once
+        gen(i + 1, cur, ans, cand, tar - cand[i])
+        
+        # Backtrack
+        cur.pop()
+
+# Wrapper function
+def comb2(cand, tar):
+    cand.sort()     # Sort to handle duplicates easily
+    cur = []        # Current combination path
+    ans = []        # Final list of valid combinations
+    gen(0, cur, ans, cand, tar)
+    return ans
+
