@@ -1,10 +1,11 @@
+'''
 1. Brute Force Approach
 Time Complexity: O(N²)
 
 Space Complexity: O(1)
 
 Uses .count() for each element which again loops through the list, leading to quadratic time.
-
+'''
 # Brute force: Check count of every element
 
 def major(nums):
@@ -16,6 +17,8 @@ def major(nums):
 # Input section
 nums = list(map(int, input("Enter numbers: ").split()))
 print("Majority Element (Brute Force):", major(nums))
+
+'''
 Example:
 Input: 3 1 3 3 2
 Output: 3
@@ -27,7 +30,7 @@ Time Complexity: O(N)
 Space Complexity: O(N)
 
 We use a dictionary to store counts of each number.
-
+'''
 # Better approach: Count frequencies using a dictionary
 
 def major(nums):
