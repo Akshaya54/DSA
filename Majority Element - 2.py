@@ -1,33 +1,25 @@
 # Majority element - 2
+'''
 Using Dictionary (Hash Map)
 Time Complexity: O(N)
-
 Space Complexity: O(N)
-
-python
-Copy
-Edit
+'''
 # Find all elements that appear more than ⌊n/3⌋ times
-
 def major(nums):
     d = {}           # Dictionary to count frequencies
     n = len(nums)
     res = []         # To store the result elements
-
     # Count frequency of each number
     for i in nums:
         if i in d:
             d[i] += 1
         else:
             d[i] = 1
-
     # Check which elements occur more than n//3 times
     for key, value in d.items():
         if value > n // 3:
             res.append(key)
-
     return res
-
 # Input section
 nums = list(map(int, input("Enter the numbers: ").split()))
 print("Majority Elements (> n//3):", major(nums))
