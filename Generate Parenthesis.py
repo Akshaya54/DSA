@@ -1,4 +1,5 @@
 ## Generate Valid Parentheses
+'''
 You're given an integer n, and you need to generate all possible combinations of n pairs of balanced parentheses.
 Example:
 Input: n = 3  
@@ -8,7 +9,7 @@ Each valid parentheses string must:
 Have exactly n opening brackets (
 Have exactly n closing brackets )
 At no point should the number of ) be more than ( (to remain valid)
-
+'''
 # Recursive function to generate valid parenthesis strings
 def gen(ind, cur, ans, opening, closing, n):
     # Base Case: when we use all n opening and closing brackets
