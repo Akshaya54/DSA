@@ -1,5 +1,4 @@
 ## Merge Sort 
-
 def merge(n, arr):  # Merge Sort function, takes size and array as input
     # Recursive merge sort function
     def ms(arr, low, high):
