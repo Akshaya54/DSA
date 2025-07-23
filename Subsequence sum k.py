@@ -1,6 +1,6 @@
 ## Subsequence sum k
 
-1.Brute Force – Generate All Subsets and Filter Size k
+# 1.Brute Force – Generate All Subsets and Filter Size k
 # Recursive function to generate all subsets
 def generate(ind, curr_arr, ans, nums, k):
     if ind == len(nums):  # Base case: reached end of the list
@@ -29,11 +29,9 @@ def subsets(nums: list[int], k: int) -> list[list[int]]:
     return "No"  # If no such subset exists
 
 
-2. Optimal Solution – Subset Sum Problem (Sum = k)
-✅ Code with Comments:
-python
-Copy
-Edit
+
+# 2. Optimal Solution – Subset Sum Problem (Sum = k)
+
 # Recursive function to check if any subset sums up to k
 def c(ind, arr, k):
     # Base case: found a subset whose sum is k
