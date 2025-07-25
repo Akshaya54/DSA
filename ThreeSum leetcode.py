@@ -1,4 +1,4 @@
-"""
+'''
 Three Sum Problem Solutions
 
 Given an array nums of n integers, find all unique triplets in the array which gives the sum of zero.
@@ -7,7 +7,7 @@ Solutions include:
 1. Brute Force Approach
 2. Hash Map/Dictionary Approach
 3. Two Pointer Optimal Approach
-"""
+'''
 
 # Solution 1: Brute Force Approach
 def three_sum_bruteforce(nums):
@@ -27,6 +27,8 @@ def three_sum_bruteforce(nums):
     return [list(t) for t in s]
 
 
+
+
 # Solution 2: Hash Map Approach
 def three_sum_hashmap(nums):
     """
@@ -44,6 +46,8 @@ def three_sum_hashmap(nums):
                 s.add(temp)
             hashmap.add(nums[j])
     return [list(t) for t in s]
+
+
 
 
 # Solution 3: Two Pointer Optimal Approach
