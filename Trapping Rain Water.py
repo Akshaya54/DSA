@@ -1,11 +1,11 @@
 ## Trapping Rain Water
-
+'''
 1. Each element represents the height of a bar.
 2. You need to compute how much water can be trapped between the bars after raining.
 # Example:
 Input:  height = [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
-
+'''
 def trap(height):
     n = len(height)
     # Step 1: Create array to store max height to the left of each bar
