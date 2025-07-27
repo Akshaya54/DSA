@@ -1,5 +1,6 @@
+'''
 Method 1. Brute Force Approach (O(N²) Time, O(1) Space)
-
+'''
 # Brute Force: Try every pair and check if their sum equals target
 
 def twosum(nums, target):
@@ -15,8 +16,11 @@ nums = list(map(int, input("Enter the numbers: ").split()))
 target = int(input("Enter the target: "))
 print("Brute Force Result:", twosum(nums, target))
 
-Method 2. Better Approach – Using Hash Map (O(N) Time, O(N) Space)
 
+
+'''
+Method 2. Better Approach – Using Hash Map (O(N) Time, O(N) Space)
+'''
 # Better: Use a dictionary to store elements and their indices
 # So we can find the required pair in one pass
 
@@ -35,8 +39,10 @@ target = int(input("Enter the target: "))
 print("Hash Map Result:", twosum(nums, target))
 
 
-Method 3. Optimized Approach – Two Pointers (O(N) Time, O(1) Space)
 
+'''
+Method 3. Optimized Approach – Two Pointers (O(N) Time, O(1) Space)
+'''
 # Only works when the array is sorted
 # Optimized: Use Two Pointers for sorted array
 # Move pointers based on whether the sum is less or more than target
