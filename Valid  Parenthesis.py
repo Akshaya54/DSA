@@ -1,4 +1,5 @@
 ## Valid Parenthesis 
+'''
 You're given a string s that contains only:
 '(', ')', '{', '}', '[' and ']'
 You need to determine whether the input string is valid.
@@ -6,6 +7,7 @@ A string is valid if:
 1. Open brackets must be closed by the same type of brackets.
 2. Open brackets must be closed in the correct order.
 3. Each closing bracket must have a corresponding opening bracket before it.
+'''
 def valid(s):
     stack = []  # Initialize an empty stack to store opening brackets
     for i in s:
