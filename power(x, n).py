@@ -1,8 +1,8 @@
 #power(x, n)
-
+'''
 Time Complexity= O(log n)
 Space Complexity = O(log n)
-This is a recursive function that efficiently calculates powers in O(log n) time.
+'''
 def power(x, n):
     if n == 0:
         return 1  # Base case: anything to the power of 0 is 1
